@@ -17,6 +17,8 @@ type Query {
       "Filters by name. Accepts SQL LIKE wildcards `%` and `_`."
       name: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10)
+
+    userById(id: ID! @eq): User! @find
 }
 
 "Account of a person who utilizes this application."
@@ -38,4 +40,10 @@ type User {
 
     "When the account was last updated."
     updated_at: DateTime!
+}
+
+type Mutation {
+    createUser(name: String!, email: String!, password: String!): User @create
+    updateUser(id: ID!, email: String, password: String): User @update
+    deleteUser(id: ID!): User @delete
 }
