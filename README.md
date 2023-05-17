@@ -1,4 +1,4 @@
  
 
-# GraphQl with Light House
+# GraphQl Api Tested with rebing/graphql-laravel
  
