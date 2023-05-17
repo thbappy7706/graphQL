@@ -10,7 +10,7 @@ class Quest extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'category_id', 'description', 							  'reward'];
+    protected $guarded = ['id'];
 
     public function category():BelongsTo
     {
