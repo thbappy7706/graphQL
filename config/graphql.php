@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 return [
     'route' => [
@@ -75,14 +75,24 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // ExampleQuery::class,
+                'quest' => \App\GraphQL\Queries\QuestQuery::class,
+                'quests' => \App\GraphQL\Queries\QuestsQuery::class,
+                'category' => \App\GraphQL\Queries\CategoryQuery::class,
+                'categories' => \App\GraphQL\Queries\CategoriesQuery::class,
             ],
             'mutation' => [
-                // ExampleMutation::class,
+                'createQuest' => \App\GraphQL\Mutations\CreateQuestMutation::class,
+                'updateQuest' => \App\GraphQL\Mutations\UpdateQuestMutation::class,
+                'deleteQuest' => \App\GraphQL\Mutations\DeleteQuestMutation::class,
+                'createCategory' => \App\GraphQL\Mutations\CreateCategoryMutation::class,
+                'updateCategory' => \App\GraphQL\Mutations\UpdateCategoryMutation::class,
+                'deleteCategory' => \App\GraphQL\Mutations\DeleteCategoryMutation::class,
+
             ],
             // The types only available in this schema
             'types' => [
-                // ExampleType::class,
+                'Quest' => \App\GraphQL\Types\QuestType::class,
+                'Category' => \App\GraphQL\Types\CategoryType::class
             ],
 
             // Laravel HTTP middleware
