@@ -12,7 +12,7 @@ class DeleteCategoryMutation extends Mutation
 
     protected $attributes = [
         'name' => 'deleteCategory',
-        'description' => 'deletes a category'
+        'description' => 'Delete a category'
     ];
 
     public function type(): Type
